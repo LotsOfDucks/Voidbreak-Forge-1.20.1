@@ -1,6 +1,10 @@
 package net.lod.voidbreak;
 
 import com.mojang.logging.LogUtils;
+import net.lod.voidbreak.block.ModBlocks;
+import net.lod.voidbreak.item.ModCreativeModeTabs;
+import net.lod.voidbreak.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -25,6 +29,13 @@ public class Voidbreak {
     public Voidbreak(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+
+
+
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
@@ -41,7 +52,9 @@ public class Voidbreak {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        //if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        //    event.accept(ModItems.VOID_BOTTLE);
+        //}
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

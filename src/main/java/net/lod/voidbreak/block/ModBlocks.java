@@ -1,6 +1,8 @@
 package net.lod.voidbreak.block;
 
 import net.lod.voidbreak.Voidbreak;
+import net.lod.voidbreak.block.custom.BleedingDeepslateBlock;
+import net.lod.voidbreak.block.custom.BleedingStoneBlock;
 import net.lod.voidbreak.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -35,6 +37,22 @@ public class ModBlocks {
                     .instrument(NoteBlockInstrument.BASEDRUM)
                     .requiresCorrectToolForDrops()
                     .strength(3.0F, 6.5F)));
+
+    public static final RegistryObject<BleedingStoneBlock> BLEEDING_STONE = registerBlock("bleeding_stone",
+            () -> new BleedingStoneBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.STONE)
+                    .mapColor(MapColor.STONE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(1.0F, 3.0F)));
+
+    public static final RegistryObject<BleedingDeepslateBlock> BLEEDING_DEEPSLATE = registerBlock("bleeding_deepslate",
+            () -> new BleedingDeepslateBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.DEEPSLATE)
+                    .mapColor(MapColor.DEEPSLATE)
+                    .instrument(NoteBlockInstrument.BASEDRUM)
+                    .requiresCorrectToolForDrops()
+                    .strength(3.5F, 3.0F)));
 
 
 

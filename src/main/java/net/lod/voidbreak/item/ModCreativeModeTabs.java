@@ -29,6 +29,8 @@ public class ModCreativeModeTabs {
             .displayItems((itemDisplayParameters, output) -> {
                 output.accept(ModBlocks.GNEISS.get());
                 output.accept(ModBlocks.CHALK.get());
+                output.accept(ModBlocks.BLEEDING_STONE.get());
+                output.accept(ModBlocks.BLEEDING_DEEPSLATE.get());
             })
             .build());
 

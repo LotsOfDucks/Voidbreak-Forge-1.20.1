@@ -3,6 +3,7 @@ package net.lod.voidbreak.block;
 import net.lod.voidbreak.Voidbreak;
 import net.lod.voidbreak.block.custom.BleedingDeepslateBlock;
 import net.lod.voidbreak.block.custom.BleedingStoneBlock;
+import net.lod.voidbreak.block.custom.ChalkyGrassBlock;
 import net.lod.voidbreak.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -29,6 +30,19 @@ public class ModBlocks {
                     .instrument(NoteBlockInstrument.SNARE)
                     .requiresCorrectToolForDrops()
                     .strength(1.0F, 2.5F)));
+
+    public static final RegistryObject<Block> CHALKY_DIRT = registerBlock("chalky_dirt",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .sound(SoundType.GRAVEL)
+                    .mapColor(MapColor.TERRACOTTA_WHITE)
+                    .strength(0.5F)));
+
+    public static final RegistryObject<ChalkyGrassBlock> CHALKY_GRASS = registerBlock("chalky_grass",
+            () -> new ChalkyGrassBlock(BlockBehaviour.Properties.of()
+                    .sound(SoundType.GRASS)
+                    .mapColor(MapColor.TERRACOTTA_YELLOW)
+                    .strength(0.6F)
+                    .randomTicks()));
 
     public static final RegistryObject<Block> GNEISS = registerBlock("gneiss",
             () -> new Block(BlockBehaviour.Properties.of()
